@@ -279,8 +279,8 @@ set_shell_label() {
         # if    { for ((pid=$$; $pid != 1 ; pid=`ps h -o pid --ppid $pid`)); do ps h -o command -p $pid; done | grep -q sshd && echo == REMOTE ==; }
         #then
 
-        host=${HOSTNAME}
-        #host=`hostname --short`
+        #host=${HOSTNAME}
+        host=`hostname -s`
         host=${host#$default_host}
         uphost=`echo ${host} | tr a-z A-Z`
         if [[ $upcase_hostname = "on" ]]; then
